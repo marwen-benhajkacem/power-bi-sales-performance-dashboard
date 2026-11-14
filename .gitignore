@@ -1,0 +1,29 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary and exported files
+*.tmp
+*.log
+*.bak
+*.csv
+*.xlsx
+*.xls
+*.jsonl
+
+# Credentials / local configuration
+.env
+.env.*
+*.pfx
+*.pem
+*.key
+credentials*
+secrets*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
