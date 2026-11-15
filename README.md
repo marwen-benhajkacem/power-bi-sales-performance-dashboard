@@ -36,6 +36,7 @@ A `.pbix` file embeds its data model. Read [SECURITY.md](SECURITY.md) and tick e
 ```
 report/ProjetBI.pbix    the report (model + 2 pages)
 docs/                   screenshots and DAX measures
+data/                   Orders.csv and Returns.csv (source data)
 SECURITY.md             pre-publication checklist
 ```
 
