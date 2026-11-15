@@ -27,3 +27,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Power BI local files
+*.pbi/
+~$*
