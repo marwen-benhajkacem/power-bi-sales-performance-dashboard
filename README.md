@@ -1,54 +1,46 @@
-# Power BI Sales Performance Dashboard
+# 📊 Power BI Sales Performance Dashboard
 
-An interactive Power BI report for exploring sales performance, profitability, orders, customers, products, shipping, and product returns.
+Interactive 2-page Power BI report on sales performance, profitability, shipping and product returns, built on a two-table model (**Orders**, **Returns**) with DAX measures.
 
-## Project overview
+> **Status:** report published (`report/ProjetBI.pbix`). *(to complete: screenshots in `docs/screenshots/`, DAX formulas in `docs/dax_measures.md`)*
 
-This repository contains the Power BI report (`.pbix`) and documentation for reviewing and publishing the project.
+<!-- ![Page 1: overview](docs/screenshots/page1.png) -->
+<!-- ![Page 2: analysis](docs/screenshots/page2.png) -->
 
-The report contains two pages and includes:
+## 🎯 Business questions answered
+- How do sales, profit, units, orders and customers evolve by year, month, market and country?
+- Which products are the most profitable, and which are returned the most?
+- How do shipping cost and shipping delay relate to profit by category?
+- What share of orders is discounted, and how large is the share of returned sales in Europe?
 
-- KPI cards for total sales, total profit, total orders, total units sold, customers, and average shipping cost.
-- Filters for country, month, year, city, state, region, category, and sub-category.
-- Product analysis, including top profitable products and returned products.
-- Sales analysis by category, market, and year.
-- Shipping-duration and discount-related visuals.
-- Return analysis, including a regional view.
+## 🖼️ Report content
+**Page 1: overview.** KPI cards (total sales, total profit, total orders, total units sold, customers, average shipping cost); slicers (country, state, city, region, year, month, category, sub-category); Top 10 profit products and Top 10 returned products; donut, bar, column and line charts; filled map by country; gauge of the Europe share of returned sales.
 
-## Repository structure
+**Page 2: analysis.** Sales by month and category (column chart); sales / net profit / shipping cost by category (scatter); share of discounted orders (pie); area and column charts.
 
-```text
-power-bi-sales-performance-dashboard/
-├── README.md
-├── SECURITY.md
-├── GUIDE_FR.md
-├── .gitignore
-└── report/
-    └── ProjetBI.pbix
+## 📐 Data model and DAX
+- **Tables**: `Orders` (order lines, enriched with `Ship Days`, `Profit Net`, `Sales avec Discount`, `Order Year`, `Order Month`, country code) and `Returns` (returned orders, region), related on the order identifier. Data preparation in Power Query. *(to complete: row count of each table and the Power Query steps)*
+- **Measures used in the report**: `Total Sales`, `Total Units Sold`, `Total Orders`, `Customers`, `Total profit`, `Average Ship Coast`, `Orders with Discount`, `Total return`, `Total sales Retun`, `Total sales Retun Europe`. Formulas and explanations: [`docs/dax_measures.md`](docs/dax_measures.md).
+
+## 🗂️ Data
+The report is built on the same **Orders / Returns** sales data as the companion R project ([sales-data-cleaning-r](https://github.com/marwen-benhajkacem/sales-data-cleaning-r), 51,290 order lines and 1,079 returned orders). *(to complete: exact dataset name, source URL and licence.)*
+
+A `.pbix` file embeds its data model. Read [SECURITY.md](SECURITY.md) and tick each point before the repository is made public. The licence below covers the report and documentation only, not the underlying dataset.
+
+## ▶️ Open the report
+1. Install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows).
+2. Clone or download this repository and open `report/ProjetBI.pbix`.
+3. If Power BI asks for credentials or a refresh, do not enter credentials from an employer or private account.
+
+## 📁 Structure
+```
+report/ProjetBI.pbix    the report (model + 2 pages)
+docs/                   screenshots and DAX measures
+SECURITY.md             pre-publication checklist
 ```
 
-## Open the report
+## 🛠️ Tools
+Power BI Desktop · Power Query · DAX
 
-1. Install [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/).
-2. Download or clone this repository.
-3. Open `report/ProjetBI.pbix` in Power BI Desktop.
-4. If Power BI requests credentials or a data-source refresh, do not enter credentials from an employer or another private account. First confirm the source and your permission to use it.
-
-## Data and privacy
-
-The PBIX file contains an embedded Power BI data model. The report layout references fields such as product name, customer count, city, state, country, region, orders, sales, profit, and returns.
-
-The repository creator must verify the origin, redistribution rights, and contents of the embedded data before making this repository public. Do not publish the PBIX publicly if it contains customer-level, commercially confidential, licensed, or otherwise restricted records.
-
-If the data is based on a public sample dataset, document the exact dataset name, original source URL, license, and any required attribution here before public release. Do not claim that the data is public or synthetic unless that has been verified.
-
-See [SECURITY.md](SECURITY.md) for the pre-publication checklist.
-
-## Tools
-
-- Microsoft Power BI Desktop
-- Power BI data model and report visuals
-
-## Notes
-
-This repository currently contains the `.pbix` report file. It does not include a separate source dataset, Power Query source files, or a data dictionary. Those should only be added if they are yours to redistribute and have been checked for sensitive information.
+## 👤 Author
+Marwen Ben Haj Kacem · Master's in Data Science, ISIMA
